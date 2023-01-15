@@ -1,8 +1,8 @@
 import styles from '../style/button.module.css'
 
-function Button({title}) {
+function Button({ title, onClick = ()=>{console.log("##")}}) {
     return (
-        <button className={styles.button}>{title}</button>
+        <button onClick={ onClick } className={styles.button}>{title}</button>
     )
 }
 export default Button;

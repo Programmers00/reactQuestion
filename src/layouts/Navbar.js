@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div>
         <Link to="/">
-          <Button title={"DAD JOKE"}></Button>
+          <Button title={"DASHBOARD"}></Button>
         </Link>
         <Link to="/addJoke">
           <Button title={"ADD JOKE"}></Button>
