@@ -14,21 +14,19 @@ function Dashboard() {
   /** call api */
   const { loading, data, error, refetch } = useAxios({ url: "https://icanhazdadjoke.com/", headers: { Accept: "application/json" } })
   console.log(`Loading: ${loading}\nData: ${data && data.data && data.data.joke}\nError: ${error}`)
-  
-  useEffect(() => {
+  /** function: add joke */
+  const saveJoke = () => {
     if (data&&data.data) {
       setJoke(data.data.joke) //update joke
       setJokes([...jokes, data.data.joke])  //add joke to jokes array
     }
-  }, [data])
+  }
+  useEffect(()=> saveJoke(), [data])
   localStorage.setItem("jokes", JSON.stringify(jokes))  //save jokes array data to localStorage
-
   return (
     <div className={styles.container}>
-      <div>
         {loading ? <h1>Loading</h1> : data && !error ? <h1>{joke}</h1> : <h1>Error</h1>}
         <Button onClick={refetch} title="Get A Joke"></Button>
-      </div>  
     </div>
     )
 }
