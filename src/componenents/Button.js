@@ -1,6 +1,6 @@
 import styles from '../style/button.module.css'
 
-function Button({ title, onClick = ()=>{console.log("##")}}) {
+function Button({ title, onClick = ()=>{}}) {
     return (
         <button onClick={ onClick } className={styles.button}>{title}</button>
     )
