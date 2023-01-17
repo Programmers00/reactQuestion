@@ -1,4 +1,6 @@
+// css
 import styles from '../style/header.module.css'
+// components
 import Title from '../componenents/Title'
 import Navbar from './Navbar'
 

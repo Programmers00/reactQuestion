@@ -1,5 +1,8 @@
-import styles from '../style/navbar.module.css'
+// router
 import { Link } from 'react-router-dom'
+// css
+import styles from '../style/navbar.module.css'
+// components
 import Button from '../componenents/Button'
 
 function Navbar() {
