@@ -18,12 +18,12 @@ function Dashboard() {
   // console.log(`Loading: ${loading}\nData: ${data && data.data && data.data.joke}\nError: ${error}`)
   /** function: add joke */
   const saveJoke = () => {
-    if (data&&data.data) {
+    if (data?.data?.joke) {
       setJoke(data.data.joke) //update joke
       setJokes([...jokes, data.data.joke])  //add joke to localStorage jokes
     }
   }
-  useEffect(() => saveJoke(), [data])
+  useEffect(() => saveJoke(), [data?.data?.joke])
   return (
     <div className={styles.container}>
       <div className={styles.content}>
