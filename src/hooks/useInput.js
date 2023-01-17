@@ -1,6 +1,6 @@
 import { useState } from "react"
     
-/** useInput */
+/** hook useInput: parameter => initialValue, validator */
 export const useInput = (initialValue, validator) => {
   const [value, setValue] = useState(initialValue)
     const onChange = (e) => {
