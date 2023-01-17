@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import defaultAxios from "axios";
-/** hook: useAxios wrap up the axios */
+/** hook useAxios wrap up the axios: parameter => options(url, header), axiosInstance*/
 export const useAxios = (options, axiosInstance = defaultAxios) => {
   const [state, setState] = useState({
     loading: true,
