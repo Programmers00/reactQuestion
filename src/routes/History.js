@@ -7,7 +7,7 @@ function History() {
   const [history, setHistory] = useState(localStorage.jokes && JSON.parse(localStorage.jokes).length !== 0 ? JSON.parse(localStorage.getItem("jokes")) : [])
   return (
     <div className={styles.container}>
-        {history.map((joke, index) => <h2 key={index}>{joke}</h2>)}
+      {history.map((joke, index) => <div className={ styles.content} key={index}>{joke}</div>)}
     </div>
   );
 }

@@ -1,9 +1,10 @@
+import styles from '../style/navbar.module.css'
 import { Link } from 'react-router-dom'
 import Button from '../componenents/Button'
 
 function Navbar() {
   return (
-    <div>
+    <div className={styles.container}>
         <Link to="/">
           <Button title={"DASHBOARD"}></Button>
         </Link>

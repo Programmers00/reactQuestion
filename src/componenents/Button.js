@@ -1,8 +1,11 @@
+// css
 import styles from '../style/button.module.css'
-
-function Button({ title, onClick = ()=>{}}) {
+/** Button Component : parameter => title, style, onClick */
+function Button({ title, style = {}, onClick = () => { } }) {
     return (
-        <button onClick={ onClick } className={styles.button}>{title}</button>
+        <div className={styles.container}>
+            <button onClick={onClick} className={styles.button} style={style}>{title}</button>
+        </div>
     )
 }
 export default Button;
