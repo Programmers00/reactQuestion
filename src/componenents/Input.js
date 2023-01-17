@@ -19,7 +19,7 @@ function Input({placeholder = "please", type = "text", validator = ()=>{}, callb
   }, [trigger])
   return (
     <div className={styles.container}>
-      {type === "textArea" ? <textarea placeholder={placeholder} value={input.value} onChange={input.onChange} /> : <input placeholder={placeholder} value={input.value} onChange={input.onChange} />}
+      {type === "textArea" ? <textarea autoFocus placeholder={placeholder} value={input.value} onChange={input.onChange} /> : <input autoFocus placeholder={placeholder} value={input.value} onChange={input.onChange} />}
     </div>
   );
 }
