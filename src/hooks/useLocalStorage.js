@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-// Hook
+/** hook LocalStorage : wrap localStorage to use easy way */
 export const useLocalStorage = (key, initialValue) => {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState(() => {
+    // consider SSR(Server Side Rendering), SSG(Static Site Generation) work properly
     if (typeof window === "undefined") {
       return initialValue;
     }
