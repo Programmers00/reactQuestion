@@ -26,9 +26,6 @@ function AddJoke() {
     setNewJoke("")
     setClear(true)
   }
-  useEffect(() => {
-    console.log("##clear", clear)
-  }, [clear])
   // save jokes array data to localStorage
   localStorage.setItem("jokes", JSON.stringify(jokes))
   return (
