@@ -4,13 +4,15 @@ import styles from '../style/addJoke.module.css'
 // componenents
 import Button from '../componenents/Button'
 import Input from '../componenents/Input'
+// hook
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 function AddJoke() {
   /** data */
   // joke
   const [newJoke, setNewJoke] = useState('')
-  // jokes: when localStorage has jokes(key) and localStorage jokes array(value) is not empty, localStorage jokes array is used. if not default empty array. 
-  const [jokes, setJokes] = useState(localStorage.jokes && JSON.parse(localStorage.jokes).length !== 0 ? JSON.parse(localStorage.getItem("jokes")) : [])
+  // jokes data from localStorage, if "jokes" is not, make default []
+  const [jokes, setJokes] = useLocalStorage("jokes",[])
   // trigger clear
   const [clear, setClear] = useState(false)
   /** function: check validation*/
@@ -23,11 +25,9 @@ function AddJoke() {
   /** function: add new joke */
   const addJoke = () => {
     newJoke.length !== 0 && setJokes([...jokes, newJoke])
-    setNewJoke("")
+    setNewJoke("") //add joke to localStorage jokes
     setClear(true)
   }
-  // save jokes array data to localStorage
-  localStorage.setItem("jokes", JSON.stringify(jokes))
   return (
     <div className={styles.container}>
       <div className={styles.content}>

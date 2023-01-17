@@ -1,10 +1,11 @@
-import {useState} from 'react'
 // css
 import styles from '../style/history.module.css'
+// hook
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 function History() {
-  // jokes: when localStorage has jokes(key) and localStorage jokes array(value) is not empty, localStorage jokes array is used. if not default empty array. 
-  const [history, setHistory] = useState(localStorage.jokes && JSON.parse(localStorage.jokes).length !== 0 ? JSON.parse(localStorage.getItem("jokes")) : [])
+  // jokes data from localStorage, if "jokes" is not, make default []
+  const [history, setHistory] = useLocalStorage("jokes", [])
   return (
     <div className={styles.container}>
       {history.map((joke, index) => <div className={ styles.content} key={index}>{joke}</div>)}
