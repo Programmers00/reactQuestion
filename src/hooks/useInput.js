@@ -15,5 +15,5 @@ export const useInput = (initialValue, validator) => {
         setValue(value)
     }
   }
-  return {value, onChange}
+  return {value, onChange, setValue}
 }
